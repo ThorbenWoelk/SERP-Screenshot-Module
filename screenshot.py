@@ -5,7 +5,6 @@ the first Google SERP for a specific range of keywords defined below.
 
 The following Python package will have to be installed in order to run:
 - selenium (see http://selenium-python.readthedocs.io/installation.html)
-- filedepot (see https://pypi.python.org/pypi/filedepot).
 """
 
 # import packages needed
@@ -15,7 +14,7 @@ import csv
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-from depot.manager import DepotManager
+# from depot.manager import DepotManager
 
 # define constants and settings
 CHROME_ARGS = [
