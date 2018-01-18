@@ -16,10 +16,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 # from depot.manager import DepotManager
 
-# define constants and settings
+######## CHANGE SETTINGS HERE ######################
 CHROME_ARGS = [
 '--headless', # comment out if you want chromedriver to use the GUI
-'--lang=de-de', # choose your language settings (e.g. --lang=de-de, --lang=en-GB, --lang=fr-fr)
+'-lang=en-GB', # choose your language settings (e.g. --lang=de-de, --lang=en-GB, --lang=fr-fr)
 '--disable-gpu' # a workaround for known bug of chromedriver on Windows. Do not comment out.
 ]
 SCREENSHOT_SIZE = (1280, 3000)
@@ -28,6 +28,7 @@ ENGINES = [
 'Google', # comment out if no screenshot is needed for the respective engine
 'Bing'
 ]
+#######################################################
 
 def get_keywords(in_file):
     """define search terms to make screenshots for"""

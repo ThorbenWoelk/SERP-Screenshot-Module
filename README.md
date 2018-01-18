@@ -19,4 +19,11 @@ Running the module is simple. The only thing you need to add to the folder is a 
 1. Open your preferred terminal and navigate to the folder where the module is saved. (On Windows, you can use Powershell and type ``cd "path/to/file"``)
 2.  Run it by typing ``python .\screenshot.py``.
 
-A new folder should then appear in your directory, labeled by the current date and time. It holds one subfolder per engine in which you should be able to find the screenshots. 
+A new folder should then appear in your directory, labeled by the current date and time. It holds one subfolder per engine in which you should be able to find the screenshots.
+
+## Advances settings
+
+There are a few more settings you can change directly in the PY file (in the "change settings here" section).
+
+1. Exclude engines: Commenting out either Bing or Google in the ENGINES list excludes them from screenshot making.
+2. Language settings: The default is set to English ("-lang=en-GB") but you can change it according to the target search language.
