@@ -28,6 +28,8 @@ ENGINES = [
 'Google', # comment out if no screenshot is needed for the respective engine
 'Bing'
 ]
+# mobile emuation
+# MOBILE_EMULATION = { "deviceName": "iPhone 6" } # uncomment for mobile screenshots; change to known device of your choice
 #######################################################
 
 def get_keywords(in_file):
@@ -62,6 +64,8 @@ def make_screenshot(keyword_data, chrome_args, size, engines):
     chrome_options = Options()
     for argument in chrome_args:
         chrome_options.add_argument(argument)
+    if 'MOBILE_EMULATION' in globals():
+        chrome_options.add_experimental_option("mobileEmulation", MOBILE_EMULATION)
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.set_window_size(size[0], size[1]) # set the window size that you need
     # make screenshots
