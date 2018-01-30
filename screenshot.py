@@ -45,7 +45,7 @@ def get_keywords(in_file):
 def create_file_location(for_engines):
     """create new folder labeled by date and subfolder for search engine"""
     now = datetime.datetime.now()
-    directory = now.strftime("%Y-%m-%d_%H-%M")
+    directory = 'screenshots\\'+now.strftime("%Y-%m-%d_%H-%M")
     if not os.path.exists(directory):
         os.makedirs(directory)
         if 'Google' in for_engines:
