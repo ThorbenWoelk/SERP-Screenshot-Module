@@ -23,7 +23,7 @@ CHROME_ARGS = [
 '--disable-gpu' # a workaround for known bug of chromedriver on Windows. Do not comment out.
 ]
 SCREENSHOT_SIZE = (1280, 3000)
-IN_FILE = 'keyword_data.tsv'
+IN_FILES = ('keyword_data.tsv', 'manually_added_keywords.tsv')
 ENGINES = [
 'Google', # comment out if no screenshot is needed for the respective engine
 'Bing'
@@ -32,14 +32,15 @@ ENGINES = [
 # MOBILE_EMULATION = { "deviceName": "iPhone 6" } # uncomment for mobile screenshots; change to known device of your choice
 #######################################################
 
-def get_keywords(in_file):
+def get_keywords(in_files):
     """define search terms to make screenshots for"""
     list_of_keywords = []
-    with open(in_file) as csvfile:
-         reader = csv.DictReader(csvfile, delimiter='\t')
-         for row in reader:
-         # append your lists
-            list_of_keywords.append(row['keyword'])
+    for in_file in in_files:
+        with open(in_file) as csvfile:
+             reader = csv.DictReader(csvfile, delimiter='\t')
+             for row in reader:
+             # append your lists
+                list_of_keywords.append(row['keyword'])
     return list_of_keywords
 
 def create_file_location(for_engines):
@@ -77,4 +78,4 @@ def make_screenshot(keyword_data, chrome_args, size, engines):
             driver.get('https://www.bing.com/search?q='+keyword)
             driver.save_screenshot('{}{}.png'.format(path+'\\'+'Bing'+'\\', date.strftime("%Y-%m-%d ")+keyword))
 
-make_screenshot(IN_FILE, CHROME_ARGS, SCREENSHOT_SIZE, ENGINES)
+make_screenshot(IN_FILES, CHROME_ARGS, SCREENSHOT_SIZE, ENGINES)
