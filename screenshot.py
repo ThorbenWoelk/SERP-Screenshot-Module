@@ -36,11 +36,12 @@ def get_keywords(in_files):
     """define search terms to make screenshots for"""
     list_of_keywords = []
     for in_file in in_files:
-        with open(in_file) as csvfile:
-             reader = csv.DictReader(csvfile, delimiter='\t')
-             for row in reader:
-             # append your lists
-                list_of_keywords.append(row['keyword'])
+        if os.path.isfile(in_file):
+            with open(in_file) as csvfile:
+                 reader = csv.DictReader(csvfile, delimiter='\t')
+                 for row in reader:
+                 # append your lists
+                    list_of_keywords.append(row['keyword'])
     return list_of_keywords
 
 def create_file_location(for_engines):
