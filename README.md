@@ -28,3 +28,4 @@ There are a few more settings you can change directly in the PY file (in the "ch
 1. Exclude engines: Commenting out either Bing or Google in the ENGINES list excludes them from screenshot making.
 2. Language settings: The default is set to English ("-lang=en-GB") but you can change it according to the target search language.
 3. Change window size: If you don't need the whole SERP page, you can specify the window size the screenshots will have by adjusting the numbers (width, height in pixels) in SCREENSHOT_SIZE.
+4. Additionally to the 'keyword_data' file, you might want to add a file labeled 'manually_added_keywords.tsv' which holds additional keywords you want to scrape. This is particularly useful if you get a set of currently trending keywords directly from a database and still want to have some additional keywords to be always taken into consideration.  
