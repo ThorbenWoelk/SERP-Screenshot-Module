@@ -78,4 +78,5 @@ def make_screenshot(keyword_data, chrome_args, size, engines):
             driver.get('https://www.bing.com/search?q='+keyword)
             driver.save_screenshot('{}{}.png'.format(path+'\\'+'Bing'+'\\', date.strftime("%Y-%m-%d ")+keyword))
 
-make_screenshot(IN_FILES, CHROME_ARGS, SCREENSHOT_SIZE, ENGINES)
+if __name__ == '__main__':
+    make_screenshot(IN_FILES, CHROME_ARGS, SCREENSHOT_SIZE, ENGINES)
